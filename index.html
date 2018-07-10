@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Matias Kaplan</title>
+  <meta charset="utf-8">
+  <!-- Set up bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css" type="text/css" media="all">
+
+</head>
+<body>
+
+<!-- Title -->
+<div id="header" class="container-fluid bg-1 text-center">
+  <h1><span class = "titleWobble"> Matias</span> Kaplan</h1>
+</div>
+
+<div class="container">
+  <ul id="tabs" class="nav nav-pills nav-justified red">
+    <li><a data-toggle="pill" href="#science">Science</a></li>
+    <li><a data-toggle="pill" href="#illustration">Illustrations</a></li>
+    <li><a data-toggle="pill" href="#about">About/Contact</a></li>
+  </ul>
+
+
+  <div id="contentBox" class="tab-content fluid content">
+    <div id="about" class="tab-pane fade">
+      <h2>About</h2>
+      <p>I am a PhD student in the<a href="http://smolkelab.weebly.com"> Smolke lab</a> within the Stanford University Bioengineering department.</p>
+      <p>My interests are synthetic biology, RNA, equity and justice.</p>
+      <p>I helped cofound <a href="https://scienceactioncommittee.org">Science Action Committee</a> to organize scientists around political issues</p>
+			<p>Email me at mtskpln @ gmail.com or follow me <a href="https://twitter.com/mtskpln">@mtskpln</a> on twitter</p>
+    </div>
+    <div id="science" class="tab-pane fade">
+      <h2>Science</h2>
+      <p>I work on ribozymes to better understand how RNA sequence affects function.</p>
+			<p>I once made an <a href="https://amino-emoji.glitch.me">emoji translator</a> based off this <a href="https://twitter.com/JacobPhD/status/899082652690427905">tweet.</a></p>
+      <p>Previously I worked on the structure and dynamics of Cas9 and AAV</p>
+    </div>
+    <div id="illustration" class="tab-pane fade">
+      <h2>Illustrations</h2>
+      <p>Structural biology allows us to view the molecular world of biology. These illustrations are created using structures found on the <a href="http://www.rcsb.org/pdb/home/home.do">Protein Data Bank.</a></p>
+      <div class="container-fluid bg-3 text-center">
+            <div class="row">
+              <div class="col-sm-4">
+                <h3>Translating Ribosome</h3>
+                <img class="img-responsive-rounded" style="width:100%" src="ribosome.png" alt="ribosome">
+              </div>
+              <div class="col-sm-4">
+                <h3>Hammerhead Ribozyme</h3>
+                <img class="img-responsive-rounded" style="width:100%" src="HHRz.gif" alt="hammerhead ribozyme">
+              </div>
+              <div class="col-sm-4">
+                <h3><em>S. pyogenes<em> Cas9</h3>
+                <img class="img-responsive-rounded" style="width:100%" src="cas9.png" alt="Cas9">
+              </div>
+            </div>
+          </div>
+			<!-- <div class="container">
+			  <img class="img-responsive-rounded" src="ribosome.png" alt="ribosome" width="480" height="270">
+			</div> -->
+    </div>
+  </div>
+
+</body>
+</html>
