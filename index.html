@@ -4,26 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matias Kaplan</title>
+    <link rel="icon" type="image/png" href="hhrz.gif">
     <style>
+        :root {
+            --gradient-active: 1; /* Set to 1 to enable gradient, 0 to disable */
+            --solid-background: #fad0c4; /* Solid color when gradient is off */
+        }
         body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            height: 100%;
+            min-height: 100vh;
             width: 100%;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         .gradient-background {
+            min-height: 100vh;
+            width: 100%;
+            background: var(--solid-background);
             background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f);
+            background: var(--gradient-active, linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f));
             background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            height: 100vh;
-            width: 100vw;
-            position: relative; /* Added for absolute positioning of child */
+            animation: var(--gradient-active, gradient 15s ease infinite, none);
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
-        @keyframes gradient {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
+        .content {
+            flex: 1;
+            position: relative;
+            padding-bottom: 60px; /* Space for footer */
         }
         .name {
             font-family: 'Courier', monospace;
@@ -31,36 +43,95 @@
             color: black;
             font-size: 36px;
             letter-spacing: 0.1em;
-            position: absolute;
+            margin-bottom: 20px;
+            position: relative;
             top: 10%;
             left: 10%;
         }
-        .underline {
-            text-decoration: underline wavy red;
+        .tagline {
+            font-size: 18px; /* Reduced from 36px */
+            font-style: normal; 
+            letter-spacing: monospace; /* Reset letter-spacing */
+            margin-top: 5px; /* Add some space between taglines */
         }
         .about-me {
             font-family: 'Courier', monospace;
             color: black;
-            font-size: 18px;
-            line-height: 1.6;
-            position: absolute;
-            top: 25%;
+            font-size: 16px;
+            line-height: 1.5;
+            position: relative;
+            top: 15%;
             left: 10%;
             width: 60%;
             max-width: 600px;
+        }
+        .publications {
+            font-family: 'Courier', monospace;
+            color: black;
+            font-size: 14px;
+            line-height: 1.4;
+            position: relative;
+            top: 20%;
+            left: 10%;
+            width: 80%;
+            max-width: 800px;
+        }
+        .publications h2 {
+            font-size: 20px; /* Reduced from 24px */
+            margin-bottom: 15px; /* Reduced from 20px */
+        }
+        .publications ul {
+            padding-left: 15px; /* Reduced from 20px */
+        }
+        .publications li {
+            margin-bottom: 10px; /* Reduced from 15px */
+        }
+        .footer {
+            font-family: 'Courier', monospace;
+            color: black;
+            font-size: 14px;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
     <div class="gradient-background">
-        <div class="name"><span class="underline">Matias</span> Kaplan</div>
-        <div class="about-me">
-            <!-- Add your about me content here -->
-            I am a...
-            <br><br>
-            My interests include...
-            <br><br>
-            Currently, I'm working on...
+        <div class="content">
+            <div class="name">
+                Matias Kaplan
+                <div class="tagline">a better world is possible</div>
+                <!-- <div class="tagline">climate solutions through science</div> -->
+            </div>
+            <div class="about-me">
+                I am a synthetic biologist with a background in RNA devices, high-throughput biochemistry, structural biology and machine learning. I think industrial policy is neat and necessary. 
+                <br><br>
+                As founding scientist at Atomic AI, I developed workflows for collecting large RNA structure datasets from high-throughput experiments to create state-of-the-art <a href="https://www.biorxiv.org/content/10.1101/2023.12.13.571579v1" > models</a> for RNA struture prediction. 
+                <br><br>
+                During my Bioengineering PhD in Christina Smolke's lab at Stanford I worked on understanding and developing new RNA-based small molecule devices for cell control. 
+            </div>
+            <div class="publications">
+                <h2>Selected Publications</h2>
+                <ul>
+                    <li><a href="https://www.biorxiv.org/content/10.1101/2023.12.13.571579v1">ATOM‐1: A Foundation Model for RNA Structure and Function Built on Chemical Mapping Data</a> bioRxiv, 2023</li>
+                    <li><a href=" doi.org/10.1371/journal.pone.0273381">                Highly multiplexed selection of RNA aptamers against a small molecule library</a> PLoS One, 2022</li>
+                    <li><a href="doi.org/10.1038/s41576‐021‐00436‐7">                Engineering synthetic RNA devices for cell control</a> Nature Rev Genetics, 2022</li>
+                    <li><a href="doi.org/10.1128/JVI.01251‐21"> Structurally Mapping Antigenic Epitopes of Adeno‐Associated Virus 9: Development of Antibody Escape Variants</a> Journal of Virology, 2022</li>
+                    <li><a href="doi.org/10.1038/s41467‐019‐12334‐y">                Massively parallel RNA device engineering in mammalian cells with RNA‐Seq</a> Nature Comms, 2019</li>
+                    <li><a href="doi.org/10.1038/nature15544">                Conformational control of DNA target cleavage by CRISPR‐Cas9</a> Nature, 2015</li>
+                    <li><a href="doi.org/10.1126/science.1247997">                Structures of Cas9 Endonucleases Reveal RNA‐Mediated Conformational Activation</a> Science, 2014</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            &copy; 2024 Matias Kaplan. All rights reserved.
+            <br>
+            Last modified: September 10, 2024
         </div>
     </div>
 </body>
