@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="hhrz.gif">
     <style>
         :root {
-            --gradient-active: 1; /* Set to 1 to enable gradient, 0 to disable */
+            --gradient-active: 1; /* Set to 1 to enable gradient */
             --solid-background: #fad0c4; /* Solid color when gradient is off */
         }
         body, html {
@@ -21,11 +21,8 @@
         .gradient-background {
             min-height: 100vh;
             width: 100%;
-            background: var(--solid-background);
             background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f);
-            background: var(--gradient-active, linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f));
-            background-size: 400% 400%;
-            animation: var(--gradient-active, gradient 15s ease infinite, none);
+            background-size: 100% 100%; /* Changed from 400% 400% */
             position: relative;
             padding: 20px;
             box-sizing: border-box;
